@@ -80,5 +80,5 @@ ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "same",
 AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
 // make it true for auto recoding
 
-BOT_NUMBER: process.env.BOT_NUMBER || "YOUR_NUMBER"    
+BOT_NUMBER: process.env.BOT_NUMBER || "94769089430"    
 };
