@@ -44,7 +44,7 @@ const {
   const path = require('path')
   const prefix = settings.PREFIX
   
-  const ownerNumber = ['258863956800']
+  const ownerNumber = ['94769089430']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -78,14 +78,16 @@ console.log("QUEEN ELISA Session downloaded ✅")
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 9090;
+const port = process.env.PORT || 8000;
+app.get("/", (req, res) => res.send("QUEEN ELISA MULTIDEVICE WHATSAPP BOT STARTED ✅"));
+app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   
   //=============================================
   
   async function connectToWA() {
   console.log("QUEEN ELISA Connecting to WhatsApp ⏳️...");
   const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/Elisa-sessions/')
-  var { version } = await fetchLatestBaileysVersion()
+  const { version } = await fetchLatestBaileysVersion();
   
   const conn = makeWASocket({
           logger: P({ level: 'silent' }),
@@ -94,14 +96,14 @@ const port = process.env.PORT || 9090;
           syncFullHistory: true,
           auth: state,
           version
-          })
+          });
       
   conn.ev.on('connection.update', (update) => {
-  const { connection, lastDisconnect } = update
+  const { connection, lastDisconnect } = update;
   if (connection === 'close') {
   if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
-  connectToWA()
-  }
+  connectToWA();
+}
   } else if (connection === 'open') {
   console.log('🧬 Installing Plugins')
   const path = require('path');
