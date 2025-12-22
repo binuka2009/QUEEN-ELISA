@@ -4,9 +4,9 @@
   "description": "A WhatsApp Bot Created By AYAN DEV",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name QUEEN ELISA",
-    "stop": "pm2 stop QUEEN ELISA",
-    "restart": "pm2 restart QUEEN ELISA"
+    "start": "pm2 start index.js --deep-monitoring --attach --name QUEEN-ELISA",
+    "stop": "pm2 stop QUEEN-ELISA",
+    "restart": "pm2 restart QUEEN-ELISA"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
