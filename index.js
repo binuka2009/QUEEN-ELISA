@@ -44,7 +44,10 @@ const {
   const path = require('path')
   const prefix = settings.PREFIX
   
-  const ownerNumber = ['94769089430']
+  // const ownerNumber = ['258863956800'] // පරණ පේළිය ඉවත් කරන්න
+// ඊට ප්‍රතිස්ථාපනය කරන්න:
+const ownerNumber = [settings.OWNER_NUMBER.replace(/[^0-9]/g, '') + '@s.whatsapp.net', settings.DEV.replace(/[^0-9]/g, '') + '@s.whatsapp.net'];
+// මෙය පිටපත් කිරීම වැළැක්වීමට විශේෂාංග අරාවකට ද එකතු කළ හැකිය.
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
